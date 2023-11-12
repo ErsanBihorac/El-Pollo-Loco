@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>el pollo loco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/icons/chicken.png">
+    <script src="classes/drawable-object.class.js"></script>
+    <script src="classes/movable-object.class.js"></script>
+    <script src="classes/character.class.js"></script>
+    <script src="classes/chicken.class.js"></script>
+    <script src="classes/cloud.class.js"></script>
+    <script src="classes/salsa-bottles.class.js"></script>
+    <script src="classes/coins.class.js"></script>
+    <script src="classes/status-bar.class.js"></script>
+    <script src="classes/coins-bar.class.js"></script>
+    <script src="classes/salsa-bar.class.js"></script>
+    <script src="classes/boss-bar.class.js"></script>
+    <script src="classes/background-object.class.js"></script>
+    <script src="classes/keyboard.class.js"></script>
+    <script src="classes/level.class.js"></script>
+    <script src="classes/throwable-object.class.js"></script>
+    <script src="classes/endboss.class.js"></script>
+    <script src="levels/level1.js"></script>
+    <script src="classes/world.class.js"></script>
+    <script src="js/game.js" defer></script>
+</head>
+
+<body onload="enableStartScreen()">
+
+    <h1>El pollo loco</h1>
+
+    <canvas id="canvas" width="720" height="480">
+    </canvas>
+
+    <img onclick="setToFullscreen()" id="fullscreen" src="img/icons/fullscreen.png" alt="fullscreen">
+    <img onclick="muteAll()" id="btn-mute" src="img/icons/volume_on.png" alt="btn-mute">
+    <img onclick="muteAll()" id="btn-mute-mobile" src="img/icons/volume_on.png" alt="btn-mute">
+
+    <div>
+        <img class="startscreen" id="startscreen" width="720" height="480"
+            src="img/9_intro_outro_screens/start/startscreen_1.png" alt="screen">
+        <button onclick="disableStartScreen()" id="btn-play" class="btn-play">Play!</button>
+    </div>
+
+    <div>
+        <img class="startscreen d-none" id="endscreen" width="720" height="480"
+            src="img/9_intro_outro_screens/game_over/you lost.png" alt="screen">
+        <button onclick="replayGameAfterLoss()" id="btn-replay-loss" class="btn-play d-none">Replay!</button>
+    </div>
+
+    <div>
+        <img class="startscreen d-none" id="winscreen" width="720" height="480"
+            src="img/9_intro_outro_screens/start/startscreen_1.png" alt="screen">
+        <button onclick="replayGameAfterWin()" id="btn-replay-win" class="btn-play d-none">Replay!</button>
+    </div>
+
+    <div class="rotate-device" id="rotate-device">
+        <div class="description">
+            <span>please rotate your device!</span>
+        </div>
+    </div>
+
+    <div onclick="disableControls()" class="settings d-none" id="settings">
+        <div class="description">
+            <span>arrowleft= move left</span>
+            <span>arrowright = move right</span>
+            <span>space = jump</span>
+            <span>d = throw salsa</span>
+        </div>
+    </div>
+
+    <img onclick="displayControls()" id="btn-settings-mobile" src="img/icons/settings.png" alt="btn-settings">
+    <img onclick="displayControls()" id="btn-settings" src="img/icons/settings.png" alt="btn-settings">
+
+    <img id="btn-move-left" class="move-left mobile-control" src="img/icons/chevron_left.png" alt="move_left">
+    <img id="btn-move-right" class="move-right mobile-control" src="img/icons/chevron_right.png" alt="move_right">
+    <img id="btn-move-up" class="move-up mobile-control" src="img/icons/chevron_up.png" alt="move_up">
+    <img id="btn-throw" class="throw mobile-control" src="img/icons/throw.png" alt="throw">
+</body>
+
+</html>
